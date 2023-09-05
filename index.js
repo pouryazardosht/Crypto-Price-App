@@ -25,16 +25,12 @@ const symbol = (coinName) => {
     switch (coinName) {
         case "bitcoin":
             return 'BTC'
-            break;
         case "dogecoin":
             return 'DOGE'
-            break;
         case "ethereum":
             return 'ETH'
-            break;
         case "tether":
             return 'USDT'
-            break;
         case 'tron':
             return 'TRX'
         default:
@@ -61,7 +57,7 @@ axios.get(API).then(res => {
         <div class="coin-result">
         <img src="${logoPicker(coinName)}" alt="coin pic" />
         <div class="name-container">
-          <p class="name">${coinName}</p>
+          <p class="name">${coinName[0].toLocaleUpperCase() + coinName.slice(1)}</p>
           <p class="symbol">${symbol(coinName)}</p>
         </div>
         <div class="price-container">
